@@ -1,0 +1,107 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{medication.article.title}}</ion-title>
+    <ion-buttons end>
+      <button ion-button primary (click)="deleteMedi()">
+        <ion-icon name="trash"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-grid>
+          <ion-row class="RowHeader">
+            <ion-col col-12 style="text-align: center">
+              Medikamenten-Details
+            </ion-col>
+          </ion-row>
+          <ion-row class="row-border">
+            <ion-col col-6 style="text-align: left">
+              Erfasst am:
+            </ion-col>
+            <ion-col col-6 style="text-align: left">
+              {{medication.effectiveDateTime | date:'dd.MM.yyyy'}}
+            </ion-col>
+          </ion-row>
+          <ion-row class="row-border" *ngIf="wirkstoff">
+            <ion-col col-6 style="text-align: left">
+              Wirkstoffaufnahme:
+            </ion-col>
+            <ion-col col-6 style="text-align: left">
+              {{medication.dosage[0].route.text}}
+            </ion-col>
+          </ion-row>
+          <ion-row class="row-border">
+            <ion-col col-6 style="text-align: left">
+              Barcode-Nummer:
+            </ion-col>
+            <ion-col col-6 style="text-align: left">
+              {{medication.article.gtin}}
+            </ion-col>
+          </ion-row>
+          <ion-row class="row-border">
+            <ion-col col-6 style="text-align: left">
+              Pharma-Code:
+            </ion-col>
+            <ion-col col-6 style="text-align: left">
+              {{medication.article.pharmaCode}}
+            </ion-col>
+          </ion-row>
+          <ion-row class="row-border">
+            <ion-col col-6 style="text-align: left">
+              Produkt-Nummer:
+            </ion-col>
+            <ion-col col-6 style="text-align: left">
+              {{medication.article.prodNo}}
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="imgPack">
+      <ion-card>
+        <ion-card-header style="font-size: 5vw">
+          Packung
+        </ion-card-header>
+        <ion-card-content>
+          <div style="display: flex">
+            <img *ngIf="imgFrontPack" src="{{medication.article.imgFrontPack}}"/>
+            <img *ngIf="imgBackPack" src="{{medication.article.imgBackPack}}"/>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </ion-row>
+    <ion-row *ngIf="imgBlister">
+      <ion-card>
+        <ion-card-header style="font-size: 5vw">
+          Blister
+        </ion-card-header>
+        <ion-card-content>
+          <div style="display: flex">
+            <img *ngIf="imgFrontBlister" src="{{medication.article.imgFrontBlister}}"/>
+            <img *ngIf="imgBackBlister" src="{{medication.article.imgBackBlister}}"/>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </ion-row>
+    <ion-row *ngIf="imgDrug">
+      <ion-col col12>
+        <ion-card>
+          <ion-card-header style="font-size: 5vw">
+            Medikament
+          </ion-card-header>
+          <ion-card-content>
+            <div style="display: flex">
+              <img *ngIf="imgFrontDrug" src="{{medication.article.imgFrontDrug}}"/>
+              <img *ngIf="imgBackDrug" src="{{medication.article.imgBackDrug}}"/>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

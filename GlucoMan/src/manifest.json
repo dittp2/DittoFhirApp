@@ -1,0 +1,13 @@
+{
+  "name": "GlucoMan - Glucose Manager",
+  "short_name": "GlucoMan",
+  "start_url": "index.html",
+  "display": "standalone",
+  "icons": [{
+    "src": "assets/imgs/logo.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }],
+  "background_color": "#FFC107",
+  "theme_color": "#FFC107"
+}

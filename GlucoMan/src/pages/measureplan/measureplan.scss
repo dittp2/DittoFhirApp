@@ -1,0 +1,30 @@
+page-measureplan {
+  .RowHeader {
+    background-color: color($colors, primary);
+  }
+
+  .RowDay {
+    background-color: color($colors, primaryLight);
+  }
+
+  .ColDay {
+    border: 1px solid;
+    border-color: color($colors, delimiter);
+  }
+
+  .col {
+    text-align: center;
+  }
+
+  .boldText {
+    font-weight: bold;
+  }
+
+  .borderRight {
+    border-right: 1px solid;
+    border-color: color($colors, delimiter);
+  }
+  img, ion-img{
+        height: 1.7em;
+  }
+}

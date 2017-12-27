@@ -1,0 +1,156 @@
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/v2/theming/
+$font-path: "../assets/fonts";
+
+@import "ionic.globals";
+
+
+// Shared Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass variables found in Ionic's source scss files.
+// To view all the possible Ionic variables, see:
+// http://ionicframework.com/docs/v2/theming/overriding-ionic-variables/
+
+
+
+
+// Named Color Variables
+// --------------------------------------------------
+// Named colors makes it easy to reuse colors on various components.
+// It's highly recommended to change the default colors
+// to match your app's branding. Ionic uses a Sass map of
+// colors so you can add, rename and remove colors as needed.
+// The "primary" color is the only required color in the map.
+
+$colors: (
+  //Amber
+  primary:    rgb(240, 159, 10),
+  primaryLight: #FFE082,
+  primaryDark: #FF8F00,
+  //delimiter for tables and lists
+  delimiter: #D3D3D3,
+  //Light Green
+  secondary:  #64DD17,
+  secondaryLight: #B2FF59,
+  //Coral Red
+  danger:     #f53d3d,
+  //Amber but light
+  light:      #FFECB3,
+  dark:       #222
+
+) !default;
+/*
+$popover-ios-width:             1000px !default;
+$popover-ios-min-width:         950px !default;
+$popover-ios-max-width:         1050px !default;
+
+$popover-md-width:             1000px !default;
+$popover-md-min-width:         950px !default;
+$popover-md-max-width:         1050px !default;
+
+$popover-wp-width:             1000px !default;
+$popover-wp-min-width:         950px !default;
+$popover-wp-max-width:         1050px !default;
+*/
+$img-placeholder-background:    #ffff !default;
+
+$popover-ios-width:             90% !default;
+$popover-ios-min-width:         85% !default;
+$popover-ios-max-width:         95% !default;
+
+$popover-md-width:              90% !default;
+  $popover-md-min-width:         85% !default;
+$popover-md-max-width:          95% !default;
+
+$popover-wp-width:             90% !default;
+$popover-wp-min-width:         85% !default;
+$popover-wp-max-width:         95% !default;
+
+$popover-ios-heigth:             90% !default;
+$popover-ios-min-heigth:         85% !default;
+$popover-ios-max-heigth:         95% !default;
+
+$popover-md-heigth:              90% !default;
+$popover-md-min-heigth:         85% !default;
+$popover-md-max-heigth:        95% !default;
+
+$popover-wp-heigth:             90% !default;
+$popover-wp-min-heigth:         85% !default;
+$popover-wp-max-heigth:         95% !default;
+$text-color:                 #000 !default;
+$link-color:                 color($colors, primary) !default;
+$background-color:           #fff !default;
+$subdued-text-color:         #666 !default;
+
+$font-family-base:           -apple-system, "Helvetica Neue", "Roboto", sans-serif !default;
+$font-size-base:             1.4rem !default; // 1.4rem == 14px
+
+$content-padding:            10px !default;
+$content-margin:             10px !default;
+
+$alert-min-width:             250px !default;
+$alert-max-width:             95% !default;
+
+$toolbar-background:         #f8f8f8 !default;
+$toolbar-border-color:       #b2b2b2 !default;
+$toolbar-text-color:         $text-color !default;
+$toolbar-active-color:       $link-color !default;
+$toolbar-inactive-color:     #8c8c8c !default;
+
+$tabs-background:            #f8f8f8 !default;
+$tabs-border-color:          #b2b2b2 !default;
+$tabs-tab-color-inactive:    #8c8c8c !default;
+$tabs-tab-color-active:      $link-color !default;
+
+$list-text-color:            $text-color !default;
+$list-background-color:      $background-color !default;
+$list-border-color:          #c8c7cc !default;
+
+$action-sheet-md-text-align: center !default;
+// $action-sheet-md-title-color: color($colors, primary) !default;
+
+// App iOS Variables
+// --------------------------------------------------
+// iOS only Sass variables can go here
+
+
+
+
+// App Material Design Variables
+// --------------------------------------------------
+// Material Design only Sass variables can go here
+
+
+
+
+// App Windows Variables
+// --------------------------------------------------
+// Windows only Sass variables can go here
+
+
+
+
+// App Theme
+// --------------------------------------------------
+// Ionic apps can have different themes applied, which can
+// then be future customized. This import comes last
+// so that the above variables are used and Ionic's
+// default are overridden.
+
+@import "ionic.theme.default";
+
+
+// Ionicons
+// --------------------------------------------------
+// The premium icon font for Ionic. For more info, please see:
+// http://ionicframework.com/docs/v2/ionicons/
+
+@import "ionic.ionicons";
+
+
+// Fonts
+// --------------------------------------------------
+
+@import "roboto";
+@import "noto-sans";

@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Einstellungen</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+
+    <!-- Button as item for Data Setting Page -->
+    <button ion-item (click)="goTo('BluetoothPage')">
+      <ion-icon name="bluetooth" item-left ></ion-icon>
+      Bluetooth
+    </button>
+
+    <!-- Button as item for Display Setting Page -->
+    <button ion-item (click)="goTo('DisplayPage')">
+      <ion-icon name="apps" item-left ></ion-icon>
+      Darstellung
+    </button>
+
+    <!-- Button as item for Data Setting Page -->
+    <button ion-item (click)="goTo('DataPage')">
+      <ion-icon name="lock" item-left ></ion-icon>
+      Datenverwaltung
+    </button>
+
+    <!-- Button as item for Schema Setting Page -->
+    <button ion-item (click)="goTo('SchemaPage')">
+      <ion-icon name="clipboard" item-left ></ion-icon>
+      Messschema
+    </button>
+
+    <!-- Button as item for Target Range Page-->
+    <button ion-item (click)="goTo('TargetrangePage')">
+      <ion-icon name="disc" item-left ></ion-icon>
+      Zielbereiche
+    </button>
+
+    <!-- Button as item to log out -->
+    <button ion-item (click)="logout()">
+      <ion-icon name="log-out" item-left ></ion-icon>
+      Logout
+    </button>
+
+  </ion-list>
+</ion-content>

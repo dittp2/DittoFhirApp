@@ -1,0 +1,69 @@
+page-nutrition {
+  table{
+    width: 100%;
+    border-collapse: collapse;
+  }
+  td {
+      border: 1px solid;
+      border-color: color($colors, delimiter);
+  }
+  thead {
+    background-color: color($colors, primary);
+  }
+  .rotate {
+    transform: rotate(-90.0deg);
+    align-self: center;
+  }
+  .head {
+    height: 5em;
+  }
+  .scroll-content {
+     margin-bottom: 76px !important;
+  }
+
+  .RowHeader {
+    background-color: color($colors, primary);
+  }
+
+  .borderBottom {
+    border-bottom: 1px solid;
+    border-color: color($colors, delimiter);
+  }
+
+  .borderRight {
+    border-right: 1px solid;
+    border-color: color($colors, delimiter);
+  }
+
+  .boldText {
+    font-weight: bold;
+  }
+
+  .centerText {
+    align-items: center;
+  }
+}
+.dataDetails {
+  .alert-input-wrapper:nth-child(1):after{
+    content: "Produkt";
+  }
+  .alert-input-wrapper:nth-child(2):after{
+    content: "Portion in Gramm";
+  }
+  .alert-input-wrapper:nth-child(3):after{
+      content: "Kohlenhydrate in Gramm";
+    }
+.swiper-slide{
+  font-size: $font-size-base !important;
+}
+}
+.alert-wrapper {
+    overflow-y: scroll;
+}
+.alert-button-group {
+    min-height: 3.5em;
+}
+.alert-md .alert-message,
+.alert-md .alert-input-group {
+  padding: 0 24px 5px 24px;
+}

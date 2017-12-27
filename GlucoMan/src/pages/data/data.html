@@ -1,0 +1,30 @@
+<!--
+  Generated template for the Data page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Datenverwaltung</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+    <button ion-item (click)="presentPopover()">
+      Datenschutzerklärung
+    </button>
+    <button ion-item (click)="openMIDATAImport()">
+      Importieren von MIDATA
+    </button>
+    <button ion-item (click)="openMyGlucoHealthImport()">
+      Importieren von Messgerät
+    </button>
+    <button ion-item red (click)="deleteAllData()">
+      Alle Daten löschen
+    </button>
+  </ion-list>
+</ion-content>

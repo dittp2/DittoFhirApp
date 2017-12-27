@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Darstellung</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header>
+      Grafiken
+    </ion-list-header>
+    <ion-item>
+      <ion-label>Übersicht</ion-label>
+      <ion-toggle (ionChange)="visibleChange()" [(ngModel)]="visibleList['all']"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label>Glukose</ion-label>
+      <ion-toggle (ionChange)="visibleChange()" [(ngModel)]="visibleList['glucose']"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label>Blutdruck</ion-label>
+      <ion-toggle (ionChange)="visibleChange()" [(ngModel)]="visibleList['bloodpressure']"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label>Puls</ion-label>
+      <ion-toggle (ionChange)="visibleChange()" [(ngModel)]="visibleList['pulse']"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label>Gewicht</ion-label>
+      <ion-toggle (ionChange)="visibleChange()" [(ngModel)]="visibleList['weight']"></ion-toggle>
+    </ion-item>
+  </ion-list>
+</ion-content>

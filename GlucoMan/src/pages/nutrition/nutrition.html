@@ -1,0 +1,96 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Ernährung</ion-title>
+    <ion-buttons end>
+      <button ion-button end (click)='openActionSheet()' (dblclick)='fillSampledata()'>
+      <ion-icon name="add"></ion-icon>
+    </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-slides pager (ionSlideDidChange)="slideChanged()">
+    <ion-slide>
+      <content>
+        <div id="nutrition">
+          <ion-item-divider class="divider" (click)="expand($event.srcElement)">Kohlenhydrate</ion-item-divider>
+          <chart class='c' type="StockChart" (touchstart)="focusOver();" (touchend)="focusLeave();" [options]="chartCarbo"></chart>
+        </div>
+        <p *ngIf="nutritionDetailList == 0">Es sind keine Einträge zur Ernährung vorhanden.</p>
+        <table *ngIf="nutritionDetailList != 0">
+          <thead>
+            <th class="borderRight">Datum</th>
+            <th colspan="6">Kohlenhydrate in Gramm</th>
+          </thead>
+          <tbody>
+            <tr class='head'>
+              <td class=''></td>
+              <td class='rotate'>Morgen</td>
+              <td class='rotate'>Znüni</td>
+              <td class='rotate'>Mittag</td>
+              <td class='rotate'>Zvieri</td>
+              <td class='rotate'>Abend</td>
+              <td class='rotate'>Nacht</td>
+            </tr>
+            <tr *ngFor="let item of nutritionList">
+              <td>{{item[0] | date:'dd.MM.yyyy'}}</td>
+              <td>{{item[1] | number: '1.0-2'}}</td>
+              <td>{{item[2] | number: '1.0-2'}}</td>
+              <td>{{item[3] | number: '1.0-2'}}</td>
+              <td>{{item[4] | number: '1.0-2'}}</td>
+              <td>{{item[5] | number: '1.0-2'}}</td>
+              <td>{{item[6] | number: '1.0-2'}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </content>
+    </ion-slide>
+    <ion-slide>
+      <content>
+        <ion-grid>
+          <ion-row class="RowHeader">
+            <ion-col col-3 class="boldText borderRight">
+              Datum
+            </ion-col>
+            <ion-col col-3 class="boldText borderRight">
+              Artikel
+            </ion-col>
+            <ion-col col-2 class="boldText borderRight">
+              Portion
+            </ion-col>
+            <ion-col col-4 class="boldText">
+              Kohlenhydrate
+            </ion-col>
+          </ion-row>
+          <ion-row class="RowHeader">
+            <ion-col col-3 class="borderRight">
+            </ion-col>
+            <ion-col col-3 class="borderRight">
+            </ion-col>
+            <ion-col col-2 class="borderRight">
+              g
+            </ion-col>
+            <ion-col col-4>
+              g
+            </ion-col>
+          </ion-row>
+          <ion-row class="borderBottom centerText" *ngFor="let item of nutritionDetailList" (click)="edit(item)">
+            <ion-col col-3 class="borderRight">
+              {{item.date | date:'dd.MM.yyyy HH:mm'}}
+            </ion-col>
+            <ion-col col-3 class="borderRight">
+              {{item.desc}}
+            </ion-col>
+            <ion-col col-2 class="borderRight">
+              {{item.port | number:'1.0-2'}}
+            </ion-col>
+            <ion-col col-4>
+              {{item.carb | number:'1.0-2'}}
+            </ion-col>
+          </ion-row>
+          <p *ngIf="nutritionDetailList == 0">Es sind keine Einträge zur Ernährung vorhanden.</p>
+        </ion-grid>
+      </content>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

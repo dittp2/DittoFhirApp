@@ -1,0 +1,124 @@
+<!--
+  Generated template for the Measureplan page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Messschema: {{actualSchema}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-grid>
+    <ion-row class="RowHeader">
+      <ion-col col-2 class="borderRight">
+      </ion-col>
+      <ion-col col-md-2 class="boldText borderRight">
+        Morgen
+      </ion-col>
+      <ion-col col-md-2 class="boldText borderRight">
+        Mittag
+      </ion-col>
+      <ion-col col-md-2 class="boldText borderRight">
+        Abend
+      </ion-col>
+      <ion-col col-3 class="boldText">
+        Bettruhe
+      </ion-col>
+    </ion-row>
+    <ion-row class="RowHeader">
+      <ion-col col-2 class="borderRight">
+      </ion-col>
+      <ion-col col-md-1>
+        <img src="assets/apple-full.png">
+      </ion-col>
+      <ion-col col-md-1 class="borderRight">
+        <img src="assets/apple-empty.png">
+      </ion-col>
+      <ion-col col-md-1>
+        <img src="assets/apple-full.png">
+      </ion-col>
+      <ion-col col-md-1 class="borderRight">
+        <img src="assets/apple-empty.png">
+      </ion-col>
+      <ion-col col-md-1>
+        <img src="assets/apple-full.png">
+      </ion-col>
+      <ion-col col-md-1 class="borderRight">
+        <img src="assets/apple-empty.png">
+      </ion-col>
+      <ion-col col-3>
+        vorher
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="RowDay" *ngFor="let day of arrayValues">
+      <ion-col col-2 class="ColDay boldText">
+        {{day["0"]}}
+      </ion-col>
+      <ion-col col-md-1 class="ColDay" (click)="toogleValue(day,1)">
+        {{day["1"]}}
+      </ion-col>
+      <ion-col col-md-1 class="ColDay" (click)="toogleValue(day,2)">
+        {{day["2"]}}
+      </ion-col>
+      <ion-col col-md-1 class="ColDay" (click)="toogleValue(day,3)">
+        {{day["3"]}}
+      </ion-col>
+      <ion-col col-md-1 class="ColDay" (click)="toogleValue(day,4)">
+        {{day["4"]}}
+      </ion-col>
+      <ion-col col-md-1 class="ColDay" (click)="toogleValue(day,5)">
+        {{day["5"]}}
+      </ion-col>
+      <ion-col col-md-1 class="ColDay" (click)="toogleValue(day,6)">
+        {{day["6"]}}
+      </ion-col>
+      <ion-col col-3 class="ColDay" (click)="toogleValue(day,7)">
+        {{day["7"]}}
+      </ion-col>
+    </ion-row>
+    <div *ngIf="aValBefore">
+      <ion-row class="RowHeader">
+        <ion-col col-12 class="boldText">
+          3 Tage vor der nächsten Arztkonsultation
+        </ion-col>
+      </ion-row>
+      <ion-row class="RowDay" *ngFor="let day of arrayValuesBefore">
+        <ion-col col-2 class="ColDay boldText">
+          {{day["0"]}}
+        </ion-col>
+        <ion-col col-md-1 class="ColDay" (click)="toogleValue(day,1)">
+          {{day["1"]}}
+        </ion-col>
+        <ion-col col-md-1 class="ColDay" (click)="toogleValue(day,2)">
+          {{day["2"]}}
+        </ion-col>
+        <ion-col col-md-1 class="ColDay" (click)="toogleValue(day,3)">
+          {{day["3"]}}
+        </ion-col>
+        <ion-col col-md-1 class="ColDay" (click)="toogleValue(day,4)">
+          {{day["4"]}}
+        </ion-col>
+        <ion-col col-md-1 class="ColDay" (click)="toogleValue(day,5)">
+          {{day["5"]}}
+        </ion-col>
+        <ion-col col-md-1 class="ColDay" (click)="toogleValue(day,6)">
+          {{day["6"]}}
+        </ion-col>
+        <ion-col col-3 class="ColDay" (click)="toogleValue(day,7)">
+          {{day["7"]}}
+        </ion-col>
+      </ion-row>
+    </div>
+    <p style="text-align:center">
+      <span style="font-weight:bold">X:</span> Messung zwingend, <span style="font-weight:bold">(X):</span> Messung freiwillig
+    </p>
+  </ion-grid>
+
+</ion-content>

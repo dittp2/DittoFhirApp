@@ -1,0 +1,40 @@
+page-measurements {
+  .scroll-content{
+    margin-bottom: 76px !important;
+  }
+  .RowHeader {
+    background-color: color($colors, primaryLight);
+  }
+
+  .borderTop {
+    border-top: 1px solid;
+    border-color: color($colors, delimiter);
+  }
+
+  .boldText {
+    font-weight: bold;
+  }
+
+  .borderRight {
+    border-right: 1px solid;
+    border-color: color($colors, delimiter);
+  }
+
+  .centerText {
+    align-items: center;
+  }
+
+  .glucose{
+    ion-row{
+      height: 38px;
+    }
+  }
+
+  img, ion-img{
+        height: 1.7em !important;
+  }
+  // .valueList{
+  //   height: 262px;
+  //   overflow-y: auto;
+  // }
+}
