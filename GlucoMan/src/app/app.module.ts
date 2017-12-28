@@ -20,6 +20,8 @@ import { MedicationDetailPage } from '../pages/medicationDetail/medicationDetail
 import { DisclaimerPage } from '../pages/disclaimer/disclaimer';
 import { BluetoothPage } from '../pages/bluetooth/bluetooth';
 import { InformationDetailsPage } from '../pages/information-details/information-details';
+import { EpdPage } from '../pages/epd/epd';
+
 
 import { BrowserModule } from '@angular/platform-browser';
 import { ChartModule } from 'angular2-highcharts';
@@ -74,7 +76,8 @@ export { Highcharts };
     TabsPage,
     MedicationDetailPage,
     DisclaimerPage,
-    BluetoothPage
+    BluetoothPage,
+    EpdPage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -107,7 +110,8 @@ export { Highcharts };
     TabsPage,
     MedicationDetailPage,
     DisclaimerPage,
-    BluetoothPage
+    BluetoothPage,
+    EpdPage
   ],
   providers: [
     Storage,

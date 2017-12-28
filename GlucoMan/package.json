@@ -33,6 +33,7 @@
     "midata": "github:i4mi/midata.js#v1.3",
     "rxjs": "^5.0.0-beta.12",
     "sw-toolbox": "3.4.0",
+    "xml2js": "^0.4.19",
     "zone.js": "0.6.26"
   },
   "devDependencies": {

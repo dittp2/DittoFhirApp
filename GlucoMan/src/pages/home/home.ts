@@ -6,6 +6,8 @@ import { InformationPage } from '../information/information';
 import { EmergencyPage } from '../emergency/emergency';
 import { MeasureplanPage } from '../measureplan/measureplan';
 import { CheckupsPage } from '../checkups/checkups';
+import { EpdPage } from '../epd/epd';
+
 
 /**
  * home page for tabs page
@@ -49,6 +51,8 @@ export class HomePage {
       case 'Checkups':
         this.navCtrl.push(CheckupsPage);
         break;
+      case 'EPD':
+        this.navCtrl.push(EpdPage);
     }
   }
 

@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- ************************************************************ -->
+<!-- Fallbeispiel 1 Junior -->
+<!-- Junior Diabetiker -->
+<!-- Autor: Pascal Dittli & Niveadha Kanagarasa -->
+<!-- Datum: 18.12.2017 -->
+<!-- ************************************************************ -->
+<?xml-stylesheet type='text/xsl' href='../../../../stylesheets/HL7.ch/CDA-CH/v1.2/cda-ch.xsl'?>
+<ClinicalDocument xmlns:pharm="urn:ihe:pharm:medication"
+	xmlns="urn:hl7-org:v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:hl7-org:v3 ../../../../schemas/PHARM/schemas/cda/extendedschemas/CDA_extended_pharmacy.xsd">
+
+	<realmCode code="CHE" />
+
+	<typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040" />
+
+	<!-- IHE PCC -->
+	<templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.1" />
+
+	<!-- IHE PHARM PML -->
+	<templateId root="1.3.6.1.4.1.19376.1.9.1.1.5" />
+
+	<!-- CDA-CH -->
+	<templateId root="2.16.756.5.30.1.1.1.1" extension="CDA-CH" />
+
+	<!-- CDA-CH-PHARM eCurrentMedication-V1 -->
+	<templateId root="2.16.756.5.30.1.1.10.1.3" />
+
+	<!-- id of this eCurrentMedication -->
+	<id root="074da900-2103-11e6-b67b-9e71128cae77" />
+
+	<!-- IHE PHARM PML -->
+	<code code="56445-0" codeSystem="2.16.840.1.113883.6.1"
+		codeSystemName="LOINC" displayName="Medication summary Document" />
+
+	<title>Junge Diabetiker</title>
+
+	<effectiveTime value="20120205135500+0100" />
+
+
+	<confidentialityCode code="1051000195109"
+		codeSystem="2.16.840.1.113883.6.96" displayName="Normal" />
+
+	<languageCode code="de-CH" />
+
+	<recordTarget>
+		<patientRole>
+			<id nullFlavor="NI" />
+			<patient>
+				<name>
+					<family>Meier</family>
+					<given>Max</given>
+				</name>
+				<administrativeGenderCode nullFlavor="NI" />
+				<birthTime value="1994" />
+			</patient>
+		</patientRole>
+	</recordTarget>
+
+	<author>
+		<time value="20120205135500+0100" />
+		<assignedAuthor>
+			<id nullFlavor="NI" />
+			<assignedPerson>
+				<name>
+					<given>Familien</given>
+					<family>Hausarzt</family>
+				</name>
+			</assignedPerson>
+			<representedOrganization>
+						<id nullFlavor="NI" />
+				<name>Hauszarzt</name>
+				<telecom nullFlavor="NI" />
+				<addr>
+					<streetAddressLine>Hausarztstrasse 22</streetAddressLine>
+					<postalCode>8005</postalCode>
+					<city>Zürich</city>
+				</addr>
+			</representedOrganization>
+		</assignedAuthor>
+	</author>
+
+	<custodian>
+		<assignedCustodian>
+			<representedCustodianOrganization>
+				<id extension="7601000000000" root="2.51.1.3" />
+				<name>Hausarzt</name>
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+
+
+	<legalAuthenticator>
+		<time value="20120205135500+0100" />
+		<signatureCode code="S" />
+		<assignedEntity>
+			<id nullFlavor="NI" />
+			<assignedPerson>
+				<name>
+					<family>Hausarzt</family>
+				</name>
+			</assignedPerson>
+		</assignedEntity>
+	</legalAuthenticator>
+
+	<component contextConductionInd='true'>
+		<structuredBody>
+			<component>
+				<section>
+					<!-- CH-PHARM eCurrentMedication -->
+					<templateId root="2.16.756.5.30.1.1.10.3.9" />
+
+					<!-- IHE PHARM PML -->
+					<templateId root="1.3.6.1.4.1.19376.1.9.1.2.5" />
+
+					<code code="10160-0" codeSystem="2.16.840.1.113883.6.1"
+						codeSystemName="LOINC" displayName="History of medication use" />
+
+					<title>Medikation</title>
+
+					<text>
+						<table>
+							<thead>
+								<tr>
+									<th>Präpartename</th>
+									<th>Wirkstoffname</th>
+									<th>Galenische Form</th>
+									<th>Dosis pro Einheit</th>
+									<th>Dosierung</th>
+									<th>Dos.Morgen</th>
+									<th>Dos.Mittag</th>
+									<th>Dos.Abend</th>
+									<th>Dos.Nacht</th>
+									<th>Verabreichungsweg</th>
+									<th>Kommentar</th>
+									<th>Anwendungsdauer</th>
+									<th>Behandlungsgrund</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ID="pml.1">
+									<td ID="pml.1.brandedmedication">Lantus</td>
+									<td ID="pml.1.ingredient">Insulinum Glarginum</td>
+									<td ID="pml.1.packageform">Injektionslösung</td>
+									<td ID="pml.1.dosequantity">3 ml</td>
+									<td ID="pml.1.dosageintakemode">Morgens 20 und Abends 10 Einheiten</td>
+									<td ID="pml.1.dosagemorning">20</td>
+									<td ID="pml.1.dosagelunch">0</td>
+									<td ID="pml.1.dosageevening">10</td>
+									<td ID="pml.1.dosagenight">0</td>
+									<td ID="pml.1.routecode">subkutan</td>
+									<td ID="pml.1.note"></td>
+									<td ID="pml.1.datefromto"></td>
+									<td ID="pml.1.reason">Diabetes Typ 1 Langwirkendes Insulin</td>
+								</tr>
+								<tr ID="pml.2">
+									<td ID="pml.2.brandedmedication">INSULIN</td>
+									<td ID="pml.2.ingredient"> Insulin Aspart</td>
+									<td ID="pml.2.packageform">Injektionslösung</td>
+									<td ID="pml.2.dosequantity">3 ml</td>
+									<td ID="pml.2.dosageintakemode">Morgens 8, Mittag 6 Abends 8 Einheiten</td>
+									<td ID="pml.2.dosagemorning">8</td>
+									<td ID="pml.2.dosagelunch">6</td>
+									<td ID="pml.2.dosageevening">8</td>
+									<td ID="pml.2.dosagenight">0</td>
+									<td ID="pml.2.routecode">subkutan</td>
+									<td ID="pml.2.note"></td>
+									<td ID="pml.2.datefromto"></td>
+									<td ID="pml.2.reason">Diabetes Typ 1 kurzwirkendes Insulin</td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+					<entry>
+						<substanceAdministration classCode="SBADM"
+							moodCode="INT">
+							<!-- IHE PHARM MTP Required element indicating the Medication Treatment
+								Plan entry content module -->
+							<templateId root="1.3.6.1.4.1.19376.1.9.1.3.7" />
+							<!-- CCD -->
+							<templateId root="2.16.840.1.113883.10.20.1.24" />
+							<!-- PCC Medication Entry Content Module -->
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7" />
+							<!-- CH-PHARM Medication Treatment Plan Item Entry Content Module -->
+							<templateId root="2.16.756.5.30.1.1.10.4.34" />
+
+							<!-- split dosing -->
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.9" />
+
+
+							<!-- ID of mtp item, PCC TF2 6.3.4.16.6 -->
+							<id root="17931678-20b4-11e6-b67b-9e71128cae77" />
+
+							<text>
+								<reference value="#pml.1" />
+							</text>
+							<statusCode code="completed" />
+							<effectiveTime xsi:type="IVL_TS">
+								<low value="20120204" />
+							</effectiveTime>
+							<effectiveTime operator='A' xsi:type='EIVL_TS'>
+								<event code='ACM' />
+							</effectiveTime>
+							<routeCode code="SQ" displayName="Injection, subcutaneous"
+								codeSystem="2.16.840.1.113883.5.112" codeSystemName="RouteOfAdministration" />
+							<consumable>
+								<manufacturedProduct classCode="MANU"
+									xmlns:pharm="urn:ihe:pharm:medication">
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2" />
+									<templateId root="2.16.840.1.113883.10.20.1.53" />
+									<manufacturedMaterial classCode="MMAT"
+										determinerCode="KIND">
+										<!-- CH-PHARM Manufactured Material Content Module -->
+										<templateId root="2.16.756.5.30.1.1.10.4.33" />
+										<!-- https://compendium.ch/prod/lantus-inj-los-100-e-ml-solostar-pen/de -->
+										<templateId root="1.3.6.1.4.1.19376.1.9.1.3.1" />
+										<code code="A10AE04" codeSystem="2.16.840.1.113883.6.73"
+											codeSystemName="ATC WHO" displayName="Insulin glargine">
+											<originalText>
+												<reference value="#pml.1.ingredient" />
+											</originalText>
+										</code>
+										<name>Lantus Inj Lös 100 E/ml SoloStar Pen</name>
+										<pharm:formCode code="_Liquid" codeSystem="2.16.840.1.113883.5.85"
+											displayName="Liquid" />
+										<pharm:asContent classCode="CONT">
+											<pharm:containerPackagedMedicine
+												classCode="CONT" determinerCode="INSTANCE">
+												<!-- National medicinal product code (package-level) -->
+												<pharm:code code="7680580440019" codeSystem="2.51.1.1"
+													codeSystemName="GTIN" displayName=" LANTUS Inj Lös 100 E/ml SoloStar Pen 5 Amp 3 ml" />
+												<!-- Brand name (package) -->
+												<pharm:name>Lantus Inj Lös 100 E/ml SoloStar Pen</pharm:name>
+												<pharm:formCode code="_Liquid" codeSystem="2.16.840.1.113883.5.85"
+												displayName="Liquid" />
+												<pharm:capacityQuantity value="100" />
+											</pharm:containerPackagedMedicine>
+										</pharm:asContent>
+										<pharm:ingredient classCode="ACTI"
+											xmlns:pharm="urn:ihe:pharm:medication">
+											<pharm:quantity>
+												<pharm:numerator unit="ml" value="3"
+													xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+													xsi:type="pharm:PQ" />
+												<pharm:denominator value="1"
+													xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+													xsi:type="pharm:PQ" />
+											</pharm:quantity>
+											<pharm:ingredient classCode="MMAT"
+												determinerCode="KIND">
+												<code code="A10AE04" codeSystem="2.16.840.1.113883.6.73"
+											codeSystemName="ATC WHO" displayName="Insulin glargine">
+												<pharm:name>Insulin glargine</pharm:name>
+											</pharm:ingredient>
+										</pharm:ingredient>
+									</manufacturedMaterial>
+								</manufacturedProduct>
+							</consumable>
+							<!-- dosage insruction -->
+							<entryRelationship typeCode='COMP'>
+								<substanceAdministration classCode='SBADM'
+									moodCode='INT'>
+									<templateId root='1.3.6.1.4.1.19376.1.9.1.3.6' />
+									<!-- Split dosing -->
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.9" />
+									<effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+										xsi:type="IVL_TS">
+										<low value="20120204" />
+									</effectiveTime>
+									<routeCode code="SQ" displayName="Injection, subcutaneous"
+								codeSystem="2.16.840.1.113883.5.112" codeSystemName="RouteOfAdministration" />
+									<consumable>
+										<manufacturedProduct>
+											<manufacturedMaterial nullFlavor='NA' />
+										</manufacturedProduct>
+									</consumable>
+									<entryRelationship typeCode='COMP'>
+										<!-- morgens 20 Einheit -->
+										<sequenceNumber value='1' />
+										<substanceAdministration classCode='SBADM'
+											moodCode='INT'>
+											<effectiveTime xsi:type='EIVL_TS'>
+												<event code='PCM' />
+											</effectiveTime>
+											<doseQuantity>
+												<center value="20" />
+											</doseQuantity>
+											<consumable>
+												<manufacturedProduct>
+													<manufacturedMaterial nullFlavor="NA" />
+												</manufacturedProduct>
+											</consumable>
+										</substanceAdministration>
+									</entryRelationship>
+									<entryRelationship typeCode='COMP'>
+										<!-- abends 10 Einheit -->
+										<sequenceNumber value='2' />
+										<substanceAdministration classCode='SBADM'
+											moodCode='INT'>
+											<effectiveTime xsi:type='EIVL_TS'>
+												<event code='PCV' />
+											</effectiveTime>
+											<doseQuantity>
+												<center value="10" />
+											</doseQuantity>
+											<consumable>
+												<manufacturedProduct>
+													<manufacturedMaterial nullFlavor="NA" />
+												</manufacturedProduct>
+											</consumable>
+										</substanceAdministration>
+									</entryRelationship>
+								</substanceAdministration>
+							</entryRelationship>
+							<entryRelationship typeCode="RSON">
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.756.5.30.1.1.10.4.41" />
+									<code code="75326-9" codeSystem="2.16.840.1.113883.6.1"
+										displayName="Problem" />
+									<statusCode code="completed" />
+									<value xsi:type="CD" nullFlavor="OTH">
+										<originalText>
+											<reference value="#pml.1.reason" />
+										</originalText>
+									</value>
+								</observation>
+							</entryRelationship>
+							<entryRelationship typeCode="COMP">
+								<substanceAdministration moodCode="INT"
+									classCode="SBADM">
+									<templateId root="2.16.756.5.30.1.1.1.1.3.10.2.10.10.4.11" />
+									<text>
+										<reference value="#pml.1.dosageintakemode" />
+									</text>
+									<consumable>
+										<manufacturedProduct>
+											<manufacturedMaterial nullFlavor="NA" />
+										</manufacturedProduct>
+									</consumable>
+								</substanceAdministration>
+							</entryRelationship>
+							<entryRelationship typeCode="COMP">
+								<act classCode="ACT" moodCode="EVN">
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.2" />
+									<templateId root="2.16.840.1.113883.10.20.1.40" />
+									<code code="48767-8" codeSystem="2.16.840.1.113883.6.1"
+										codeSystemName="LOINC" displayName="Annotation comment" />
+									<text>
+										<reference value="#pml.1.note" />
+									</text>
+									<statusCode code="completed" />
+								</act>
+							</entryRelationship>
+							<entryRelationship typeCode='REFR'>
+								<substanceAdministration classCode='SBADM'
+									moodCode='INT'>
+									<id root="17931678-20b4-11e6-b67b-9e71128cae77" />
+									<code code='MTPItem' codeSystem='1.3.6.1.4.1.19376.1.9.2.2'
+										displayName=' Medication Treatment Plan Item' codeSystemName='IHE Pharmacy Item Type List' />
+									<consumable>
+										<manufacturedProduct>
+											<manufacturedMaterial nullFlavor='NA' />
+										</manufacturedProduct>
+									</consumable>
+									<reference typeCode="XCRPT">
+										<externalDocument>
+											<id root="17931678-20b4-11e6-b67b-9e71128cae77" />
+										</externalDocument>
+									</reference>
+								</substanceAdministration>
+							</entryRelationship>
+
+						</substanceAdministration>
+					</entry>
+					<entry>
+						<substanceAdministration classCode="SBADM"
+							moodCode="INT">
+							<!-- IHE PHARM MTP Required element indicating the Medication Treatment
+								Plan entry content module -->
+							<templateId root="1.3.6.1.4.1.19376.1.9.1.3.7" />
+							<!-- CCD -->
+							<templateId root="2.16.840.1.113883.10.20.1.24" />
+							<!-- PCC Medication Entry Content Module -->
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7" />
+							<!-- CH-PHARM Medication Treatment Plan Item Entry Content Module -->
+							<templateId root="2.16.756.5.30.1.1.10.4.34" />
+
+							<!-- split dosing -->
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.9" />
+
+
+							<!-- ID of mtp item, PCC TF2 6.3.4.16.6 -->
+							<id root="17931678-20b4-11e6-b67b-9e71128cae77" />
+
+							<text>
+								<reference value="#pml.2" />
+							</text>
+							<statusCode code="completed" />
+							<effectiveTime xsi:type="IVL_TS">
+								<low value="20120204" />
+							</effectiveTime>
+							<effectiveTime operator='A' xsi:type='EIVL_TS'>
+								<event code='ACM' />
+							</effectiveTime>
+							<routeCode code="SQ" displayName="Injection, subcutaneous"
+								codeSystem="2.16.840.1.113883.5.112" codeSystemName="RouteOfAdministration" />
+							<consumable>
+								<manufacturedProduct classCode="MANU"
+									xmlns:pharm="urn:ihe:pharm:medication">
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2" />
+									<templateId root="2.16.840.1.113883.10.20.1.53" />
+									<manufacturedMaterial classCode="MMAT"
+										determinerCode="KIND">
+										<!-- CH-PHARM Manufactured Material Content Module -->
+										<templateId root="2.16.756.5.30.1.1.10.4.33" />
+										<!-- https://compendium.ch/prod/insulin-novorapid-flexpen/de -->
+										<templateId root="1.3.6.1.4.1.19376.1.9.1.3.1" />
+										<code code="A10AD05 " codeSystem="2.16.840.1.113883.6.73"
+											codeSystemName="ATC WHO" displayName="insulin aspart">
+											<originalText>
+												<reference value="#pml.2.ingredient" />
+											</originalText>
+										</code>
+										<name>INSULIN NovoRapid FlexPen</name>
+										<pharm:formCode code="_Liquid" codeSystem="2.16.840.1.113883.5.85"
+											displayName="Liquid" />
+										<pharm:asContent classCode="CONT">
+											<pharm:containerPackagedMedicine
+												classCode="CONT" determinerCode="INSTANCE">
+												<!-- National medicinal product code (package-level) -->
+												<pharm:code code="7680557120012" codeSystem="2.51.1.1"
+													codeSystemName="GTIN" displayName="INSULIN NovoRapid FlexPen" />
+												<!-- Brand name (package) -->
+												<pharm:name>INSULIN NovoRapid FlexPen</pharm:name>
+												<pharm:formCode code="_Liquid" codeSystem="2.16.840.1.113883.5.85"
+												displayName="Liquid" />
+												<pharm:capacityQuantity value="100" />
+											</pharm:containerPackagedMedicine>
+										</pharm:asContent>
+										<pharm:ingredient classCode="ACTI"
+											xmlns:pharm="urn:ihe:pharm:medication">
+											<pharm:quantity>
+												<pharm:numerator unit="ml" value="3"
+													xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+													xsi:type="pharm:PQ" />
+												<pharm:denominator value="1"
+													xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+													xsi:type="pharm:PQ" />
+											</pharm:quantity>
+											<pharm:ingredient classCode="MMAT"
+												determinerCode="KIND">
+												<code code="A10AD05" codeSystem="2.16.840.1.113883.6.73"
+											codeSystemName="ATC WHO" displayName="insulin aspart ">
+												<pharm:name>Insulin Aspart </pharm:name>
+											</pharm:ingredient>
+										</pharm:ingredient>
+									</manufacturedMaterial>
+								</manufacturedProduct>
+							</consumable>
+							<!-- dosage insruction -->
+							<entryRelationship typeCode='COMP'>
+								<substanceAdministration classCode='SBADM'
+									moodCode='INT'>
+									<templateId root='1.3.6.1.4.1.19376.1.9.1.3.6' />
+									<!-- Split dosing -->
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.9" />
+									<effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+										xsi:type="IVL_TS">
+										<low value="20120204" />
+									</effectiveTime>
+									<routeCode code="SQ" displayName="Injection, subcutaneous"
+								codeSystem="2.16.840.1.113883.5.112" codeSystemName="RouteOfAdministration" />
+									<consumable>
+										<manufacturedProduct>
+											<manufacturedMaterial nullFlavor='NA' />
+										</manufacturedProduct>
+									</consumable>
+									<entryRelationship typeCode='COMP'>
+										<!-- morgens 6 Einheit -->
+										<sequenceNumber value='1' />
+										<substanceAdministration classCode='SBADM'
+											moodCode='INT'>
+											<effectiveTime xsi:type='EIVL_TS'>
+												<event code='PCM' />
+											</effectiveTime>
+											<doseQuantity>
+												<center value="6" />
+											</doseQuantity>
+											<consumable>
+												<manufacturedProduct>
+													<manufacturedMaterial nullFlavor="NA" />
+												</manufacturedProduct>
+											</consumable>
+										</substanceAdministration>
+									</entryRelationship>
+									<entryRelationship typeCode='COMP'>
+									<!-- mittag 8 Einheit -->
+										<sequenceNumber value='2' />
+										<substanceAdministration classCode='SBADM'
+											moodCode='INT'>
+											<effectiveTime xsi:type='EIVL_TS'>
+												<event code='PCD' />
+											</effectiveTime>
+											<doseQuantity>
+												<center value="8" />
+											</doseQuantity>
+											<consumable>
+												<manufacturedProduct>
+													<manufacturedMaterial nullFlavor="NA" />
+												</manufacturedProduct>
+											</consumable>
+										</substanceAdministration>
+									</entryRelationship>
+									<entryRelationship typeCode='COMP'>
+										<!-- abends 6 Einheit -->
+										<sequenceNumber value='3' />
+										<substanceAdministration classCode='SBADM'
+											moodCode='INT'>
+											<effectiveTime xsi:type='EIVL_TS'>
+												<event code='PCV' />
+											</effectiveTime>
+											<doseQuantity>
+												<center value="6" />
+											</doseQuantity>
+											<consumable>
+												<manufacturedProduct>
+													<manufacturedMaterial nullFlavor="NA" />
+												</manufacturedProduct>
+											</consumable>
+										</substanceAdministration>
+									</entryRelationship>
+								</substanceAdministration>
+							</entryRelationship>
+							<entryRelationship typeCode="RSON">
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.756.5.30.1.1.10.4.41" />
+									<code code="75326-9" codeSystem="2.16.840.1.113883.6.1"
+										displayName="Problem" />
+									<statusCode code="completed" />
+									<value xsi:type="CD" nullFlavor="OTH">
+										<originalText>
+											<reference value="#pml.2.reason" />
+										</originalText>
+									</value>
+								</observation>
+							</entryRelationship>
+							<entryRelationship typeCode="COMP">
+								<substanceAdministration moodCode="INT"
+									classCode="SBADM">
+									<templateId root="2.16.756.5.30.1.1.1.1.3.10.2.10.10.4.11" />
+									<text>
+										<reference value="#pml.2.dosageintakemode" />
+									</text>
+									<consumable>
+										<manufacturedProduct>
+											<manufacturedMaterial nullFlavor="NA" />
+										</manufacturedProduct>
+									</consumable>
+								</substanceAdministration>
+							</entryRelationship>
+							<entryRelationship typeCode="COMP">
+								<act classCode="ACT" moodCode="EVN">
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.2" />
+									<templateId root="2.16.840.1.113883.10.20.1.40" />
+									<code code="48767-8" codeSystem="2.16.840.1.113883.6.1"
+										codeSystemName="LOINC" displayName="Annotation comment" />
+									<text>
+										<reference value="#pml.2.note" />
+									</text>
+									<statusCode code="completed" />
+								</act>
+							</entryRelationship>
+							<entryRelationship typeCode='REFR'>
+								<substanceAdministration classCode='SBADM'
+									moodCode='INT'>
+									<id root="17931678-20b4-11e6-b67b-9e71128cae77" />
+									<code code='MTPItem' codeSystem='1.3.6.1.4.1.19376.1.9.2.2'
+										displayName=' Medication Treatment Plan Item' codeSystemName='IHE Pharmacy Item Type List' />
+									<consumable>
+										<manufacturedProduct>
+											<manufacturedMaterial nullFlavor='NA' />
+										</manufacturedProduct>
+									</consumable>
+									<reference typeCode="XCRPT">
+										<externalDocument>
+											<id root="17931678-20b4-11e6-b67b-9e71128cae77" />
+										</externalDocument>
+									</reference>
+								</substanceAdministration>
+							</entryRelationship>
+						</substanceAdministration>
+					</entry>
+				</section>
+			</component>
+		</structuredBody>
+	</component>
+</ClinicalDocument>
