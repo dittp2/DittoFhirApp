@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import xml2js from 'xml2js';
+import { Injectable } from '@angular/core';
+import { xml2js } from 'xml2js';
 import { Http } from '@angular/http';
-import { map } from 'rxjs/operators/map';
 
 declare var cordova: any;
 
@@ -21,7 +21,7 @@ export class EpdPage {
    */
   public xmlItems: any;
 
-  constructor(public http: Http, ) {
+  constructor(public http: Http) {
 
   }
 
@@ -40,40 +40,27 @@ export class EpdPage {
     {
     
     var xml = new XMLHttpRequest();
+    var xml2js = new xml2js();
     xml.open('GET', 'assets/data/junior.xml', false);
     xml.send();
     var xmlData = xml.responseXML;
-    document.write("<table border='1'>");
-    var x = xmlData.getElementsByTagName("")
-    var i = 0;
-    for (i = 0;i < x.length;i++)
-    {
-      document.write("<tr><td>");
-      document.write(x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue);
-      document.write("</tr>");
-      document.write("</table>");
-    }
-    
-    }
-
-    showXML()
-    {
-      var xml = new XMLHttpRequest();
-      xml.open('GET', 'assets/data/junior.xml', false);
-      xml.send();
-      var xmlData = xml.responseText;
-      document.write(xmlData);
-      return xmlData;
+    var jsonData = xml2js(xmlData);
+    var beautifiedJson = JSON.stringify(jsonData, undefined, 4)
+    document.getElementById('jsonData').innerHTML = beautifiedJson;    
     }
 
 
 
-  
+getCatalog() {
+  //return Promise.resolve(['This', 'That']);
+  var xml = "<root>Hello xml2js!</root>"
+  xml2js.parseString(xml);
+  alert("funktioniert nicht.");
 
-
-
+} 
 
 }
+
 /*
 Funktioniert
 readXML() {
@@ -84,6 +71,16 @@ readXML() {
     document.write(xmlData);
   }
 
+      document.write("<table border='1'>");
+    var x = xmlData.getElementsByTagName("")
+    var i = 0;
+    for (i = 0;i < x.length;i++)
+    {
+      document.write("<tr><td>");
+      document.write(x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue);
+      document.write("</tr>");
+      document.write("</table>");
+    }
 
 
 
