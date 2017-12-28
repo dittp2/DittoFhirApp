@@ -14,6 +14,8 @@ declare var cordova: any;
   selector: 'page-epd',
   templateUrl: 'epd.html'
 })
+
+
 export class EpdPage {
 
   /**
@@ -21,24 +23,30 @@ export class EpdPage {
    */
   public xmlItems: any;
 
-  constructor(public http: Http) {
+ 
+
+  constructor(
+    public http: Http,
+    public xml2js: xml2js
+  ) {
 
   }
+
 
   /**
    * toggle the visibility of the langauges german an english
    * @param  {string} langShow the language to set visible
    * @param  {string} langHide the language to hide
    */
+
   changeLanguage(langShow: string, langHide: string) {
     document.getElementById(langShow).style.display = 'block';
     document.getElementById(langHide).style.display = 'none';
   }
 
-
+//read local xml file and Write in document
   readXML() 
-    {
-    
+    {  
     var xml = new XMLHttpRequest();
     var xml2js = new xml2js();
     xml.open('GET', 'assets/data/junior.xml', false);
@@ -50,13 +58,12 @@ export class EpdPage {
     }
 
 
-
-getCatalog() {
+//convert various xml into json 
+convertXMLToJson() {
   //return Promise.resolve(['This', 'That']);
   var xml = "<root>Hello xml2js!</root>"
   xml2js.parseString(xml);
   alert("funktioniert nicht.");
-
 } 
 
 }
