@@ -23,14 +23,9 @@ export class EpdPage {
    */
   public xmlItems: any;
 
- 
 
-  constructor(
-    public http: Http,
-    public xml2js: xml2js
-  ) {
 
-  }
+  constructor(public http: Http) {}
 
 
   /**
@@ -44,9 +39,8 @@ export class EpdPage {
     document.getElementById(langHide).style.display = 'none';
   }
 
-//read local xml file and Write in document
-  readXML() 
-    {  
+  //read local xml file and Write in document
+  readXML() {
     var xml = new XMLHttpRequest();
     var xml2js = new xml2js();
     xml.open('GET', 'assets/data/junior.xml', false);
@@ -54,18 +48,20 @@ export class EpdPage {
     var xmlData = xml.responseXML;
     var jsonData = xml2js(xmlData);
     var beautifiedJson = JSON.stringify(jsonData, undefined, 4)
-    document.getElementById('jsonData').innerHTML = beautifiedJson;    
-    }
+    document.getElementById('jsonData').innerHTML = beautifiedJson;
+  }
 
 
-//convert various xml into json 
-convertXMLToJson() {
-  //return Promise.resolve(['This', 'That']);
-  var xml = "<root>Hello xml2js!</root>"
-  xml2js.parseString(xml);
-  alert("funktioniert nicht.");
-} 
-
+  //convert various xml into json 
+  convertXMLToJson() {
+    //return Promise.resolve(['This', 'That']);
+    var xml = "<root>Hello xml2js!</root>"
+    xml2js.parseString(xml);
+    alert("parsing war erfolgreich!");
+  }
+  {
+    alert("parsing war NICHT erfolgreich!!");
+  }
 }
 
 /*
