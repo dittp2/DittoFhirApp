@@ -25,6 +25,7 @@
     "@ionic-native/core": "^3.4.4",
     "@ionic-native/screen-orientation": "^3.4.4",
     "@ionic/storage": "1.1.7",
+    "@types/xml2json": "^0.10.0",
     "angular2-highcharts": "^0.5.5",
     "highcharts": "^5.0.7",
     "ionic-angular": "2.1.0",

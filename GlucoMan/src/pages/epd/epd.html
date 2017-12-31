@@ -12,6 +12,15 @@
 
 </ion-header>
 
+<script>
+var parseString = require('xml2js').parseString;
+var xml = "<root>Hello xml2js!</root>"
+
+parseString(xml, function (err, result) {
+    console.log(result);
+});
+</script>
+
 
 
 <ion-content>
@@ -22,15 +31,23 @@
           <button ion-button col-12 (click)="readXML()">
           <div>
             <ion-icon name="alert"></ion-icon>
-            <p>XML holen</p>
+            <p>read XML</p>
           </div>
         </button>
         </ion-col>
         <ion-col col-6>
-          <button ion-button col-12 (click)="getCatalog()">
+          <button ion-button col-12 (click)="convertXML()">
           <div>
             <ion-icon name="information-circle"></ion-icon>
-            <p>XML to JSON</p>
+            <p>convert XML</p>
+          </div>
+        </button>
+        </ion-col>
+        <ion-col col-6>
+          <button ion-button col-12 (click)="test()">
+          <div>
+            <ion-icon name="information-circle"></ion-icon>
+            <p>test</p>
           </div>
         </button>
         </ion-col>

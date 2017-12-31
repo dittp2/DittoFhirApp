@@ -1,19 +1,34 @@
 import { Component } from '@angular/core';
-import { Injectable } from '@angular/core';
+//import { Injectable } from '@angular/core';
+
 import { xml2js } from 'xml2js';
 import { Http } from '@angular/http';
+import { NavController } from 'ionic-angular/navigation/nav-controller';
+import * as test from '../epd/conv.js';
+//import { toJson } from 'xml2json';
+//import * as xml2js from "xml2js";
 
 declare var cordova: any;
 
+
+//declare var require: any;
+
+
+//var converter = require('xml2js');
+
+
 /**
  * emergenca page for home page
- * @param  {'page-epd'}  {selector   [description]
+ * @param  {'page-espd'}  {selector   [description]
  * @param  {'epd.html'}} templateUrl [description]
  */
+
 @Component({
   selector: 'page-epd',
   templateUrl: 'epd.html'
 })
+
+
 
 
 export class EpdPage {
@@ -22,10 +37,19 @@ export class EpdPage {
    *
    */
   public xmlItems: any;
+  public xmlDatapass;
 
 
 
-  constructor(public http: Http) {}
+
+
+
+
+
+  constructor(public nacCtrl: NavController) {
+    //http: Http;
+    //xml2js: xml2js;
+  }
 
 
   /**
@@ -39,6 +63,35 @@ export class EpdPage {
     document.getElementById(langHide).style.display = 'none';
   }
 
+
+  readXML() {
+    var xml = new XMLHttpRequest();
+    xml.open('GET', 'assets/data/junior.xml', false);
+    xml.send();
+    var xmlData = xml.responseText;
+    document.write(xmlData);
+    this.xmlDatapass = xmlData;
+  }
+  
+
+  convertXML() {  
+    var xml = new XMLHttpRequest();
+    xml.open('GET', 'assets/data/junior.xml', false);
+    xml.send();
+    var xmlName = "<name>Fabio</name>"
+    //var xmlData = xml.responseText;
+    xml2js.parseString(xmlName, function (result) {
+    document.write(result);
+    console.log(result);
+    });
+  }
+
+ test(){
+   test.test();
+ }
+}
+
+/*
   //read local xml file and Write in document
   readXML() {
     var xml = new XMLHttpRequest();
@@ -46,10 +99,41 @@ export class EpdPage {
     xml.open('GET', 'assets/data/junior.xml', false);
     xml.send();
     var xmlData = xml.responseXML;
-    var jsonData = xml2js(xmlData);
-    var beautifiedJson = JSON.stringify(jsonData, undefined, 4)
-    document.getElementById('jsonData').innerHTML = beautifiedJson;
+    var xmlData = xmlData.toS
+    var jsonData = toJson(xmlData);
+    document.write(jsonData);
+
+    //var jsonData = converter(xmlData);
+    //var beautifiedJson = JSON.stringify(jsonData, undefined, 4);
+    //document.getElementById('jsonData').innerHTML = beautifiedJson;
   }
+
+
+  myjson(){
+    var req = this.http.get("my_link_for_xml");
+    return req.map((res:Response) => {
+    let c = res.text();
+    let myJson = xml2js.xml_str2json(c);
+    return myJson;
+    });
+    }
+
+}
+
+
+
+
+/*
+converter(data: string): Object {
+
+  let res;
+  xml2js.parseString(data, { explicitArray: false});
+  
+  }
+
+changeFile(){
+  document.write(this.converter('assets/data/junior.xml'));
+}
 
 
   //convert various xml into json 
@@ -59,12 +143,11 @@ export class EpdPage {
     xml2js.parseString(xml);
     alert("parsing war erfolgreich!");
   }
-  {
-    alert("parsing war NICHT erfolgreich!!");
-  }
-}
 
-/*
+
+
+
+
 Funktioniert
 readXML() {
     var xml = new XMLHttpRequest();

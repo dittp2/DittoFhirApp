@@ -29,8 +29,10 @@ import { Storage } from '@ionic/storage';
 import { BluetoothSerial } from '@ionic-native/bluetooth-serial';
 
 import { HttpModule, JsonpModule } from '@angular/http';
+import { xml2js } from 'xml2js';
 
 declare var require: any;
+var converterJson = require('xml2js');
 
 var Highcharts = require('highcharts/highstock');
 
