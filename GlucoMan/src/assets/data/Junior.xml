@@ -249,7 +249,7 @@
 											<pharm:ingredient classCode="MMAT"
 												determinerCode="KIND">
 												<code code="A10AE04" codeSystem="2.16.840.1.113883.6.73"
-											codeSystemName="ATC WHO" displayName="Insulin glargine">
+											codeSystemName="ATC WHO" displayName="Insulin glargine"/>
 												<pharm:name>Insulin glargine</pharm:name>
 											</pharm:ingredient>
 										</pharm:ingredient>
@@ -450,7 +450,7 @@
 											<pharm:ingredient classCode="MMAT"
 												determinerCode="KIND">
 												<code code="A10AD05" codeSystem="2.16.840.1.113883.6.73"
-											codeSystemName="ATC WHO" displayName="insulin aspart ">
+											codeSystemName="ATC WHO" displayName="insulin aspart "/>
 												<pharm:name>Insulin Aspart </pharm:name>
 											</pharm:ingredient>
 										</pharm:ingredient>

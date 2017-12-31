@@ -78,9 +78,8 @@ export class EpdPage {
     var xml = new XMLHttpRequest();
     xml.open('GET', 'assets/data/junior.xml', false);
     xml.send();
-    var xmlName = "<name>Fabio</name>"
-    //var xmlData = xml.responseText;
-    xml2js.parseString(xmlName, function (result) {
+    var xmlData = xml.responseText;
+    xml2js.parseString(xmlData, function (result) {
     document.write(result);
     console.log(result);
     });
