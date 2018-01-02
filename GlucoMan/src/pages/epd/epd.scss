@@ -8,4 +8,11 @@ page-emergency {
   #english {
     padding: 0px 10px;
   }
+
+  #output {
+    background-color: blue;
+    height: 300px;
+    width: auto;
+    overflow: scroll;
+  }
 }
