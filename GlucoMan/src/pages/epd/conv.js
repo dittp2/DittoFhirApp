@@ -1,6 +1,8 @@
 var parseString = require('xml2js').parseString;
 
 
+//Get junior.xml file and converts it into json
+//turns json object into a string and prints it out in the 'output' div container
 exports.convXMLToJson = function() {
     var xml = new XMLHttpRequest();
     xml.open('GET', 'assets/data/junior.xml', false);
