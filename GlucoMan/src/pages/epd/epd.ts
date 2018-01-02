@@ -1,10 +1,14 @@
+//used imports
+//------------
 import { Component } from '@angular/core';
-//import { Injectable } from '@angular/core';
-
-import { xml2js } from 'xml2js';
-import { Http } from '@angular/http';
 import { NavController } from 'ionic-angular/navigation/nav-controller';
 import * as convXMLToJson from '../epd/conv.js';
+
+//unused imports
+//--------------
+//import { Injectable } from '@angular/core';
+//import { xml2js } from 'xml2js';
+//import { Http } from '@angular/http';
 //import { toJson } from 'xml2json';
 //import * as xml2js from "xml2js";
 
@@ -12,14 +16,12 @@ declare var cordova: any;
 
 
 //declare var require: any;
-
-
 //var converter = require('xml2js');
 
 
 /**
- * emergenca page for home page
- * @param  {'page-espd'}  {selector   [description]
+ * epd page for home page
+ * @param  {'page-epd'}  {selector   [description]
  * @param  {'epd.html'}} templateUrl [description]
  */
 
@@ -70,27 +72,21 @@ export class EpdPage {
     xml.send();
     var xmlData = xml.responseText;
     //document.write(xmlData);
+    console.dir(xmlData);
     document.getElementById('output').innerHTML = xmlData;
     this.xmlDatapass = xmlData;
 
   }
   
-
-  convertXML() {  
-    var xml = new XMLHttpRequest();
-    xml.open('GET', 'assets/data/junior.xml', false);
-    xml.send();
-    var xmlData = xml.responseText;
-    xml2js.parseString(xmlData, function (result) {
-    document.write(result);
-    console.log(result);
-    });
-  }
-
   convXMLToJson(){
     var result = convXMLToJson.convXMLToJson();
     return result; 
  }
+
+sendToFhirConverter(){
+  
+}
+
 }
 
 /*
@@ -102,4 +98,17 @@ readXML() {
     var xmlData = xml.responseText;
     document.write(xmlData);
 }
+
+//Funktioniert nicht wegen xml2js!
+  convertXML() {  
+    var xml = new XMLHttpRequest();
+    xml.open('GET', 'assets/data/junior.xml', false);
+    xml.send();
+    var xmlData = xml.responseText;
+    xml2js.parseString(xmlData, function (result) {
+    document.write(result);
+    console.log(result);
+    });
+  }
+
 */

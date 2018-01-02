@@ -10,10 +10,11 @@ exports.convXMLToJson = function() {
     var xmlData = xml.responseText;
 
     parseString(xmlData, function (err, result) {
-    console.dir(result);
+    //console.dir(result);
     var stringifiedResult = JSON.stringify(result);
     //document.write(stringifiedResult);
     document.getElementById('output').innerHTML = stringifiedResult;
+    console.dir(xmlData);
     //document.write(result)
     //document.getElementById('output').nodeValue = result;
     //document.getElementById('output').innerHTML = result;
