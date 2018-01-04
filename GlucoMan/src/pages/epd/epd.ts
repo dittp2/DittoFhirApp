@@ -83,8 +83,10 @@ export class EpdPage {
     var result = convXMLToJson.convXMLToJson();
     return result;
   }
+ 
 
-  sendToFhirConverter(xmlData) {
+  sendToFhirConverter() {
+    var xmlData = convXMLToJson();
     var url = "http://localhost:8080/Measurement";
     this.http.post(url, xmlData)
       .subscribe(xmlData => {
