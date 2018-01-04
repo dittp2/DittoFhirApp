@@ -1,14 +1,16 @@
 //used imports
 //------------
 import { Component } from '@angular/core';
+//import { NavController } from 'ionic-angular/navigation/nav-controller';
 import { NavController } from 'ionic-angular/navigation/nav-controller';
 import * as convXMLToJson from '../epd/conv.js';
+import { Storage } from '@ionic/storage';
+import { Http } from '@angular/http';
 
 //unused imports
 //--------------
 //import { Injectable } from '@angular/core';
 //import { xml2js } from 'xml2js';
-//import { Http } from '@angular/http';
 //import { toJson } from 'xml2json';
 //import * as xml2js from "xml2js";
 
@@ -42,14 +44,10 @@ export class EpdPage {
   public xmlDatapass;
 
 
+  constructor(public navCtrl: NavController, public http: Http, public storage: Storage) {
+    this.http = http;
+    this.navCtrl = navCtrl;
 
-
-
-
-
-
-  constructor(public nacCtrl: NavController) {
-    //http: Http;
     //xml2js: xml2js;
   }
 
@@ -58,12 +56,14 @@ export class EpdPage {
    * toggle the visibility of the langauges german an english
    * @param  {string} langShow the language to set visible
    * @param  {string} langHide the language to hide
+   * @param  {Storage} 
    */
 
   changeLanguage(langShow: string, langHide: string) {
     document.getElementById(langShow).style.display = 'block';
     document.getElementById(langHide).style.display = 'none';
   }
+
 
 
   readXML() {
@@ -77,20 +77,107 @@ export class EpdPage {
     this.xmlDatapass = xmlData;
 
   }
-  
-  convXMLToJson(){
+
+  //Converts xml to json
+  convXMLToJson() {
     var result = convXMLToJson.convXMLToJson();
-    return result; 
- }
+    return result;
+  }
 
-sendToFhirConverter(){
-  
-}
-
+  sendToFhirConverter(xmlData) {
+    var url = "http://localhost:8080/Measurement";
+    this.http.post(url, xmlData)
+      .subscribe(xmlData => {
+        this.xmlDatapass.responseText = xmlData["_body"];
+        console.log(xmlData);
+      }, error => {
+        console.log("oops");
+      });
+  }
 }
 
 /*
-Funktioniert
+
+openMIDATAImport() {
+    let actionSheet = this.actionSheetCtrl.create({});
+    actionSheet.setTitle('MIDATA Import');
+    actionSheet.addButton({
+      text: 'Alle',
+      icon: 'filing',
+      handler: () => {
+        // if storage is ready to use
+        this.storage.ready().then(() => {
+          // get all chronic medis
+          this.storage.get('chronicMedis').then((val) => {
+            if (val)
+              this.medis1 = val;
+          });
+          this.storage.get('selfMedis').then((val) => {
+            if (val)
+              this.medis2 = val;
+          });
+          this.storage.get('insulin').then((val) => {
+            if (val)
+              this.medis3 = val;
+          });
+          this.storage.get('intolerances').then((val) => {
+            if (val)
+              this.medis4 = val;
+            this.saveMIDATAMedications();
+          });
+          this.storage.get('glucoseValues').then((val) => {
+            if (val)
+              this.glucose = val;
+          });
+          this.storage.get('bpValues').then((val) => {
+            if (val)
+              this.bp = val;
+          });
+          this.storage.get('pulseValues').then((val) => {
+            if (val)
+              this.pulse = val;
+          });
+          this.storage.get('weightValues').then((val) => {
+            if (val)
+              this.weight = val;
+            this.saveMIDATAObservations({});
+          });
+        });
+      }
+    });
+    actionSheet.addButton({
+      text: 'Medikamente',
+      icon: 'medkit',
+      handler: () => {
+        // if storage is ready to use
+        this.storage.ready().then(() => {
+          // get all chronic medis
+          this.storage.get('chronicMedis').then((val) => {
+            if (val)
+              this.medis1 = val;
+          });
+          this.storage.get('selfMedis').then((val) => {
+            if (val)
+              this.medis2 = val;
+          });
+          this.storage.get('insulin').then((val) => {
+            if (val)
+              this.medis3 = val;
+          });
+          this.storage.get('intolerances').then((val) => {
+            if (val)
+              this.medis4 = val;
+            this.saveMIDATAMedications();
+          });
+        });
+      }
+    });
+
+
+  }
+
+
+//Funktioniert
 readXML() {
     var xml = new XMLHttpRequest();
     xml.open('GET', 'assets/data/junior.xml', false);
@@ -99,7 +186,7 @@ readXML() {
     document.write(xmlData);
 }
 
-//Funktioniert nicht wegen xml2js!
+  //Funktioniert nicht wegen xml2js!
   convertXML() {  
     var xml = new XMLHttpRequest();
     xml.open('GET', 'assets/data/junior.xml', false);

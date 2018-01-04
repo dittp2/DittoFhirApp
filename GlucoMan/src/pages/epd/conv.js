@@ -11,7 +11,8 @@ exports.convXMLToJson = function() {
 
     parseString(xmlData, function (err, result) {
     //console.dir(result);
-    var stringifiedResult = JSON.stringify(result);
+    var stringifiedResult = JSON.stringify(result, null, "\t");
+    var stringifiedResult = JSON.stringify(stringifiedResult, null, 1);
     //document.write(stringifiedResult);
     document.getElementById('output').innerHTML = stringifiedResult;
     console.dir(xmlData);
